@@ -1,0 +1,58 @@
+<div class="page-header">
+  <h1><%= @product.title %>
+    <small class="rating">&bigstar;&bigstar;&bigstar;&bigstar;&star;</small>
+  </h1>
+  <p>Sold by <%= link_to "Cookie Monster", '#' %>.</p>
+  <p>
+
+    <%= link_to "Edit This Listing", "/products/#{@product.id}/edit" %>
+    |
+    <%= link_to "Delete This Listing", "/products/#{@product.id}", method: 'delete', data: { confirm: "Are you crazy?" } %>
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <%= image_tag @product.photo_url,
+                  class: 'img-responsive' %>
+  </div>
+
+  <div class="col-sm-8">
+    <p class="price"><%= number_to_currency(@product.price / 100.0) %>
+      <%= link_to "Buy Now", '#', class: "btn btn-lg btn-success" %>
+    </p>
+
+
+    <p>
+      <%= @product.description %>
+    </p>
+
+    <hr>
+
+
+    <%= form_tag("/reviews", method: 'post') do %>
+      <h3>Add Your Review</h3>
+      <p>
+        <%= label_tag :rating %>
+        <%= select_tag :rating, options_for_select([1,2,3,4,5]), prompt: "Select 1 to 5...", class: '' %>
+      </p>
+      <p><%= text_area_tag :content, "", rows: 3, class: 'form-control' %></p>
+      <%= submit_tag "Submit", class: 'btn btn-primary' %>
+    <% end %>
+
+    <hr>
+    <h3>Reviews</h3>
+    <p>&bigstar;&bigstar;&bigstar;&star;&star;</p>
+    <p>
+      Not bad but it's too hard to switch on and off.  You have to actually get
+      off the couch.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <p>&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</p>
+    <p>
+      Amazing.  You say "pizza" and you have pizza.  You say "house" and you
+      have a new house.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+
+</div>
