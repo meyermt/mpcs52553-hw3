@@ -22,3 +22,267 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/products/14" for 127.0.0.1 at 2017-07-10 21:51:54 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (34.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 391ms (Views: 274.4ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/products/14" for 127.0.0.1 at 2017-07-10 21:51:58 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oPk1x+trhHMPrJaMn+lgKAfEeJb8I42xB9gHqMp4qjnckhhyZPGtqLuQc3hBWTIQ37SqwMcim0SGzNtOD7Ij9w==", "id"=>"14"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-07-10 21:51:58 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/21" for 127.0.0.1 at 2017-07-10 21:52:02 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/products/21" for 127.0.0.1 at 2017-07-10 21:52:04 -0500
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zmQqZSZYGE0bVXf3cbYzv/k8xHap2VJ8IMvHBksVG6yyDwfQqcIxlq9pkgOvBmGHIUwWIJLYRImh3xvgjt+SYg==", "id"=>"21"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 21]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-07-10 21:52:04 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2000], ["title", "Echo Dot"], ["description", "Echo Dot is a hands-free, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/61ikAJnULvL._SX522_.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 1495], ["title", "Desk Organizer"], ["description", "This organizer helps you to organize Pen, note, and staples."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/91CXGq5AIHL._SX522_.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 3000], ["title", "Wireless Speaker"], ["description", "Roughly translated, \"Solo\" in Italian means \"alone\". You will feel anything but that when listening to Como Audio’s Solo, because Solo unlocks a world of musical entertainment. Be it tuning an Internet radio station from the other side of the globe, enjoying one of 30+ million songs from Spotify Connect, or streaming music via Bluetooth wireless technology, let Solo be your music concierge."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/71nkTOSLbRL._SY500_.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 5995], ["title", "Mantel Clock"], ["description", "A very attractive art deco style clock made by Ferranti of Manchester. It has a beautiful coloured, dark Bakelite case in excellent condition with no cracks or chips. There is a little bit of discolouration to the dial. I believe it to be a Ferranti No.3 synchronous mantel clock and is completely original, no quartz movement added! I have had it running for several days and it works smooth and quietly and seems to keep good time. Measures approx 15.8cm high x 15.5cm wide x 6.5cm deep."], ["photo_url", "https://img1.etsystatic.com/177/0/12275651/il_570xN.1178021673_d76a.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2400], ["title", "Basket Cat Book"], ["description", "Basket Cat loves baskets - big baskets and small baskets, tall baskets and even the washing basket! But all Basket Cat wants is a basket of her very own. Where will she find one? The book contains nine colourful double page spreads that take you on an adventure with Basket Cat as she tries out all of the different baskets for size :)"], ["photo_url", "https://img1.etsystatic.com/107/1/8245013/il_570xN.1050819053_tuh7.jpg"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2400], ["title", "iPad Pro Sleeve"], ["description", "A new design for the iPad Pro with Apple Pencil users in mind. Now available for the new 10.5\" iPad Pro and the 12.9\" iPad Pro. This is the good stuff. We choose this felt specifically over the other German felts as it has a smoother, tighter surface and higher density which makes for more solid stitching. Two full body pieces plus a third that forms the pocket on the front... that's 9mm of felt to protect your goods. Our felt is hand selected for us to ensure we are supplied a consistent color & texture."], ["photo_url", "https://img0.etsystatic.com/125/5/5409876/il_570xN.947061328_euh8.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 9900], ["title", "Custom Electric Guitar"], ["description", "This is my own custom designed electric guitar body. I designed the body to accept a standard Fender Stratocaster neck. I use Warmoth necks with this design. I will give you the option to pick wood species for the body, any appropriate neck from Warmoth (Gibson or Fender scale length), and the pickups.  In this example, this body is made from two pieces of solid walnut laminated at the center line so the sap wood creates a stripe. The neck is roasted maple with stainless steel frets and locking tuners. The humbuckers are GT500's from Monty's Guitars in England. The electronics are CTS for the pots and Switchcraft for the pickup selector and jack. The capacitor is an orange drop to match the pickups."], ["photo_url", "https://img0.etsystatic.com/150/1/13588550/il_570xN.1087344098_kmq6.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 900], ["title", "Mesh Wastebasket"], ["description", "Combining a sleek industrial look with simple everyday convenience, this AmazonBasics mesh wastebasket helps keep work areas tidy and running more efficiently. The wastebasket features steel wire mesh in black, reinforced with a solid metal base and solid edging along the bottom and top rim. The durable mesh wastebasket holds its shape over time and offers subtle transparency, concealing contents while still making it possible to check at a glance if it needs to be emptied. The AmazonBasics mesh wastebasket can be used on its own or with a bag liner. Either way, it adds a touch of useful functionality and handsome style to any setting."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/A1XkC6xtBPL._SY679_.jpg"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for 127.0.0.1 at 2017-07-10 21:53:06 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (58.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 422ms (Views: 332.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 21:53:49 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 25ms (Views: 16.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 21:53:51 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 21:53:57 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/products/22" for 127.0.0.1 at 2017-07-10 21:54:00 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products/22"):
+  
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 21:54:07 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 21:54:08 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 21:59:44 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 379ms (Views: 269.2ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/products/22" for 127.0.0.1 at 2017-07-10 21:59:48 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lAZwVaxtGgFChNL93FBdeHYSEhzDWPRV2nEcKJ0DEUrobV3gI/cz2va4NwkC4A9ArmLASvhZ4qBbZcDOWMmYhA==", "title"=>"Echo Dot2", "price"=>"20.0", "description"=>"Echo Dot is a hands-free, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly.", "commit"=>"Update Item", "id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "products" SET "title" = ?, "price" = ? WHERE "products"."id" = ?[0m  [["title", "Echo Dot2"], ["price", 20], ["id", 22]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/22
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 21:59:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 45ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 21:59:52 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/products/22" for 127.0.0.1 at 2017-07-10 22:00:14 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ahZTOZ4OEZuM8ke1lBq4kQoww673ZUecrH0j/K/Ic6cWfX6MEZQ4QDjOokFKquqp0kAR+MxkUWktaf8aagL6aQ==", "title"=>"Echo Dot", "price"=>"1.2", "description"=>"Echo Dot is a hands-free cool thing, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly.", "commit"=>"Update Item", "id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "products" SET "title" = ?, "price" = ?, "description" = ? WHERE "products"."id" = ?[0m  [["title", "Echo Dot"], ["price", 1], ["description", "Echo Dot is a hands-free cool thing, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly."], ["id", 22]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/22
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 22:00:14 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/22/edit" for 127.0.0.1 at 2017-07-10 22:00:19 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/products/22" for 127.0.0.1 at 2017-07-10 22:00:42 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0go1VU1Xk4uPzxMDn7LxBfpbywjKZeWrdEjSU08pr8LIwVg2q93lZoD2bjQzpn8z5m9ehgogWMsxf+viPYvcQ==", "title"=>"Echo Dot", "price"=>"100.01", "description"=>"Echo Dot is a hands-free cool thing, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly.", "commit"=>"Update Item", "id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "products" SET "price" = ? WHERE "products"."id" = ?[0m  [["price", 100], ["id", 22]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/22
+Completed 302 Found in 12ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 22:00:42 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/products/22" for 127.0.0.1 at 2017-07-10 22:00:57 -0500
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0go1VU1Xk4uPzxMDn7LxBfpbywjKZeWrdEjSU08pr8LIwVg2q93lZoD2bjQzpn8z5m9ehgogWMsxf+viPYvcQ==", "title"=>"Echo Dot", "price"=>"20034.01", "description"=>"Echo Dot is a hands-free cool thing, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly.", "commit"=>"Update Item", "id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "products" SET "price" = ? WHERE "products"."id" = ?[0m  [["price", 20034], ["id", 22]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/22
+Completed 302 Found in 11ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/products/22" for 127.0.0.1 at 2017-07-10 22:00:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.4ms)
+
+

@@ -21,6 +21,22 @@ class ProductsController < ApplicationController
     redirect_to "/products"
   end
 
+  def update
+    p = Product.find_by(id: params["id"])
+    p.title = params["title"]
+    p.price = params["price"]
+    p.description = params["description"]
+    p.save
+
+    redirect_to "/products/#{params["id"]}"
+  end
+
+  def destroy
+    p = Product.find_by(id: params["id"])
+    p.destroy
+    redirect_to "/products"
+  end
+
   def edit
     @product = Product.find_by(id: params["id"])
   end
