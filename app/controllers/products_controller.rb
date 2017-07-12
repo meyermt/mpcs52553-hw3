@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   def create
     p = Product.new
     p.title = params["title"]
+    p.photo_url = params["photo_url"]
     p.price = params["price"].to_f * 100
     p.description = params["description"]
     p.save

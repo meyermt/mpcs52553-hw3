@@ -286,3 +286,150 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2017-07-12 12:42:44 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (7.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (164.2ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 825ms (Views: 674.0ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-07-12 12:42:50 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 35ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-07-12 12:42:59 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"psp937ze7HO09w3sturNdYeUUoCUxiaqeZoBcginrqjaoVBqM0TFqADL6BhoWp9NX+SA1q/HMF/4jt2UzW0nZg==", "title"=>"something", "price"=>"12.50", "description"=>"cool", "commit"=>"Create Item"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description") VALUES (?, ?, ?)[0m  [["price", 1250], ["title", "something"], ["description", "cool"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 14ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-07-12 12:42:59 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+     6:   <div class="col-sm-6 col-md-3">
+     7:     <div class="thumbnail">
+     8: 
+     9:       <%= link_to image_tag(p.photo_url),
+    10:                   "/products/#{p.id}",
+    11:                   alt: "Echo Dot", class: 'img-responsive' %>
+    12: 
+  
+app/views/products/index.html.erb:9:in `block in _app_views_products_index_html_erb___1470783631640897780_70277702418280'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___1470783631640897780_70277702418280'
+Started GET "/products/new" for 127.0.0.1 at 2017-07-12 12:54:58 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 319ms (Views: 316.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-07-12 12:55:47 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h2f/2Jq/rs61LEPYlVEPORpJA5gt9v1rRPklRWXiX3f7DNJtFSWHFQEQpixL4V0BwjnRzhb3657F7fmjoCjWuQ==", "title"=>"super ball", "photo_url"=>"http://www.superballs.com/images/oops/SuperBall_Mini_marbled.jpg", "price"=>"12.50", "description"=>"cool ball", "commit"=>"Create Item"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 1250], ["title", "super ball"], ["description", "cool ball"], ["photo_url", "http://www.superballs.com/images/oops/SuperBall_Mini_marbled.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 99ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-07-12 12:55:47 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+     6:   <div class="col-sm-6 col-md-3">
+     7:     <div class="thumbnail">
+     8: 
+     9:       <%= link_to image_tag(p.photo_url),
+    10:                   "/products/#{p.id}",
+    11:                   alt: "Echo Dot", class: 'img-responsive' %>
+    12: 
+  
+app/views/products/index.html.erb:9:in `block in _app_views_products_index_html_erb___4037021661064096350_70331773652700'
+app/views/products/index.html.erb:3:in `_app_views_products_index_html_erb___4037021661064096350_70331773652700'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2000], ["title", "Echo Dot"], ["description", "Echo Dot is a hands-free, voice-controlled device with a small built-in speaker—it can also connect to your speakers or headphones over Bluetooth or through a 3.5 mm audio cable to deliver stereo sound to the speakers you choose. Dot connects to the Alexa Voice Service to play music, make calls, send and receive messages, provide information, news, sports scores, weather, and more—instantly."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/61ikAJnULvL._SX522_.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 1495], ["title", "Desk Organizer"], ["description", "This organizer helps you to organize Pen, note, and staples."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/91CXGq5AIHL._SX522_.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 3000], ["title", "Wireless Speaker"], ["description", "Roughly translated, \"Solo\" in Italian means \"alone\". You will feel anything but that when listening to Como Audio’s Solo, because Solo unlocks a world of musical entertainment. Be it tuning an Internet radio station from the other side of the globe, enjoying one of 30+ million songs from Spotify Connect, or streaming music via Bluetooth wireless technology, let Solo be your music concierge."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/71nkTOSLbRL._SY500_.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 5995], ["title", "Mantel Clock"], ["description", "A very attractive art deco style clock made by Ferranti of Manchester. It has a beautiful coloured, dark Bakelite case in excellent condition with no cracks or chips. There is a little bit of discolouration to the dial. I believe it to be a Ferranti No.3 synchronous mantel clock and is completely original, no quartz movement added! I have had it running for several days and it works smooth and quietly and seems to keep good time. Measures approx 15.8cm high x 15.5cm wide x 6.5cm deep."], ["photo_url", "https://img1.etsystatic.com/177/0/12275651/il_570xN.1178021673_d76a.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2400], ["title", "Basket Cat Book"], ["description", "Basket Cat loves baskets - big baskets and small baskets, tall baskets and even the washing basket! But all Basket Cat wants is a basket of her very own. Where will she find one? The book contains nine colourful double page spreads that take you on an adventure with Basket Cat as she tries out all of the different baskets for size :)"], ["photo_url", "https://img1.etsystatic.com/107/1/8245013/il_570xN.1050819053_tuh7.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 2400], ["title", "iPad Pro Sleeve"], ["description", "A new design for the iPad Pro with Apple Pencil users in mind. Now available for the new 10.5\" iPad Pro and the 12.9\" iPad Pro. This is the good stuff. We choose this felt specifically over the other German felts as it has a smoother, tighter surface and higher density which makes for more solid stitching. Two full body pieces plus a third that forms the pocket on the front... that's 9mm of felt to protect your goods. Our felt is hand selected for us to ensure we are supplied a consistent color & texture."], ["photo_url", "https://img0.etsystatic.com/125/5/5409876/il_570xN.947061328_euh8.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 9900], ["title", "Custom Electric Guitar"], ["description", "This is my own custom designed electric guitar body. I designed the body to accept a standard Fender Stratocaster neck. I use Warmoth necks with this design. I will give you the option to pick wood species for the body, any appropriate neck from Warmoth (Gibson or Fender scale length), and the pickups.  In this example, this body is made from two pieces of solid walnut laminated at the center line so the sap wood creates a stripe. The neck is roasted maple with stainless steel frets and locking tuners. The humbuckers are GT500's from Monty's Guitars in England. The electronics are CTS for the pots and Switchcraft for the pickup selector and jack. The capacitor is an orange drop to match the pickups."], ["photo_url", "https://img0.etsystatic.com/150/1/13588550/il_570xN.1087344098_kmq6.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 900], ["title", "Mesh Wastebasket"], ["description", "Combining a sleek industrial look with simple everyday convenience, this AmazonBasics mesh wastebasket helps keep work areas tidy and running more efficiently. The wastebasket features steel wire mesh in black, reinforced with a solid metal base and solid edging along the bottom and top rim. The durable mesh wastebasket holds its shape over time and offers subtle transparency, concealing contents while still making it possible to check at a glance if it needs to be emptied. The AmazonBasics mesh wastebasket can be used on its own or with a bag liner. Either way, it adds a touch of useful functionality and handsome style to any setting."], ["photo_url", "https://images-na.ssl-images-amazon.com/images/I/A1XkC6xtBPL._SY679_.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for 127.0.0.1 at 2017-07-12 12:56:29 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 342ms (Views: 283.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-07-12 12:56:31 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-07-12 12:56:40 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"STLKWRWurXTCKXKYOSnhfDCgUaoeVvuqJv1DS5MTmFY1WefsmjSEr3YVl2znmbNE6NCD/CVX7V+n6Z+tVtkRmA==", "title"=>"superball", "photo_url"=>"http://www.superballs.com/images/oops/SuperBall_Mini_marbled.jpg", "price"=>"12.50", "description"=>"cool ball", "commit"=>"Create Item"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "products" ("price", "title", "description", "photo_url") VALUES (?, ?, ?, ?)[0m  [["price", 1250], ["title", "superball"], ["description", "cool ball"], ["photo_url", "http://www.superballs.com/images/oops/SuperBall_Mini_marbled.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-07-12 12:56:40 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
